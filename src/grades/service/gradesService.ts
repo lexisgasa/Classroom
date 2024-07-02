@@ -17,7 +17,27 @@ export const getGradesTotal = (grades: Grade[]): number => {
 // La función debe recibir un array de notas y el id de la nota a eliminar
 // export const deleteGrade =
 
-// Crea una función para crear una nueva nota
-// La función debe recibir un array de notas, el id del estudiante, el id del curso y el valor de la nota
-// Si la nota ya existe, muestra un error con showErrorModal
-// export const addGrade =
+export const addGrade = (
+  grades: Grade[],
+  studentId: number,
+  courseId: number,
+  value: number
+): void => {
+  const existingGrade = grades.find(
+    (grade) => grade.studentId === studentId && grade.courseId === courseId
+  );
+
+  if (!existingGrade) {
+    const newGrade: Grade = {
+      id: generateId(grades),
+      studentId: studentId,
+      courseId: courseId,
+      value: value,
+    };
+    grades.push(newGrade);
+  } else {
+    showErrorModal(
+      "El estudiante ya tiene una nota en el curso que has elegido"
+    );
+  }
+};
