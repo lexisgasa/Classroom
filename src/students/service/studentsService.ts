@@ -6,9 +6,6 @@ export const getStudentsTotal = (students: Student[]): number => {
   return students.length;
 };
 
-// Crea una función para añadir un estudiante a la lista de estudiantes
-// La función debe recibir un array de estudiantes y los datos del estudiante a añadir
-// Si el estudiante ya existe en la lista, muestra un error con showErrorModal
 export const addStudent = (
   students: Student[],
   studentName: string,
@@ -17,9 +14,9 @@ export const addStudent = (
   studentEmail: string,
   studentPhoneNumber: string
 ) => {
-  const userExists = students.find((student) => student.email === studentEmail);
+  const isUser = students.find((student) => student.email === studentEmail);
 
-  if (!userExists) {
+  if (!isUser) {
     students.push({
       id: generateId(students),
       name: studentName,
@@ -35,7 +32,9 @@ export const addStudent = (
 
 // Crea una función para eliminar un estudiante de la lista de estudiantes
 // La función debe recibir un array de estudiantes y el id del estudiante a eliminar
-// export const deleteStudent =
+// export const deleteStudent = (student: Student[], id: number) => {
+
+// }
 
 // Crea una función para obtener las opciones de estudiantes para rellenar un select
 // La función debe recibir un array de estudiantes
