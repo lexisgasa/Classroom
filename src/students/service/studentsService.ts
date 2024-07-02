@@ -26,3 +26,7 @@ import { generateId } from "../../utils.js";
 // Crea una función para obtener el nombre completo de un estudiante por su id
 // La función debe recibir un array de estudiantes y el id del estudiante
 // export const getStudentNameById =
+
+export const getStudentsTotal = (students: Student[]) => {
+  return students.length;
+};
