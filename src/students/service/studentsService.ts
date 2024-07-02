@@ -31,10 +31,10 @@ export const addStudent = (
 };
 
 export const deleteStudent = (students: Student[], id: number): void => {
-  const userIndex = students.findIndex((student) => student.id === id);
+  const studentIndex = students.findIndex((student) => student.id === id);
 
-  if (userIndex !== -1) {
-    students.splice(userIndex, 1);
+  if (studentIndex !== -1) {
+    students.splice(studentIndex, 1);
   }
 };
 
