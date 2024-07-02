@@ -13,7 +13,7 @@ export const addStudent = (
   studentAge: number,
   studentEmail: string,
   studentPhoneNumber: string
-) => {
+): void => {
   const isUser = students.find((student) => student.email === studentEmail);
 
   if (!isUser) {
@@ -30,11 +30,13 @@ export const addStudent = (
   }
 };
 
-// Crea una función para eliminar un estudiante de la lista de estudiantes
-// La función debe recibir un array de estudiantes y el id del estudiante a eliminar
-// export const deleteStudent = (student: Student[], id: number) => {
+export const deleteStudent = (students: Student[], id: number): void => {
+  const userIndex = students.findIndex((student) => student.id === id);
 
-// }
+  if (userIndex !== -1) {
+    students.splice(userIndex, 1);
+  }
+};
 
 // Crea una función para obtener las opciones de estudiantes para rellenar un select
 // La función debe recibir un array de estudiantes
