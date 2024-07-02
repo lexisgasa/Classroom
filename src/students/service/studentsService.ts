@@ -14,9 +14,9 @@ export const addStudent = (
   studentEmail: string,
   studentPhoneNumber: string
 ): void => {
-  const isUser = students.find((student) => student.email === studentEmail);
+  const isStudent = students.find((student) => student.email === studentEmail);
 
-  if (!isUser) {
+  if (!isStudent) {
     students.push({
       id: generateId(students),
       name: studentName,
