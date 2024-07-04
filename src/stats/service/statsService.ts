@@ -22,7 +22,7 @@ export const getCourseStats = (courseId: number): CourseStats => {
   const gradesSum = totalGrades.reduce(
     (accumulator, currentValue) => accumulator + currentValue
   );
-  const gradesCount = grades.values.length;
+  const gradesCount = totalGrades.length;
   const averageGrade = gradesSum / gradesCount;
 
   const sortedGrades = totalGrades.toSorted();
