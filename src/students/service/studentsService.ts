@@ -51,18 +51,7 @@ export const getStudentsOptions = (
   return studentOptions;
 };
 
-// Crea una función para obtener el nombre completo de un estudiante por su id
-// La función debe recibir un array de estudiantes y el id del estudiante
-export const getStudentNameById = (
-  students: Student[],
-  id: number
-): { studentName: string; studentLastName: string } => {
+export const getStudentNameById = (students: Student[], id: number): string => {
   const student = students.find((student) => student.id === id);
-
-  return {
-    studentName: student ? student.name : "No se ha encontrado el estudiante",
-    studentLastName: student
-      ? student.lastName
-      : "No se ha encontrado el estudiante",
-  };
+  return `${student?.name} ${student?.lastName}`;
 };
